@@ -697,7 +697,9 @@ RESPONSIVE
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) 
+{
+
 
 .page-header {
     padding: 70px 25px 50px;
@@ -726,5 +728,300 @@ RESPONSIVE
 .project-detail-content h2 {
     font-size: 35px;
 }
+
+}
+
+/* ========================================
+   PÁGINA SOBRE MÍ
+======================================== */
+
+.about-hero {
+    min-height: 650px;
+
+    padding: 100px 40px;
+
+    display: grid;
+
+    grid-template-columns: 350px 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+/* ========================================
+   FOTO
+======================================== */
+
+.about-photo {
+    width: 100%;
+}
+
+.about-photo img {
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    border: 1px solid #dddddd;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+/* ========================================
+   INTRODUCCIÓN
+======================================== */
+
+.about-intro {
+    max-width: 720px;
+}
+
+.about-intro h1 {
+    margin-bottom: 30px;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+}
+
+.about-intro p {
+    margin-bottom: 18px;
+
+    font-size: 18px;
+
+    color: #666666;
+}
+
+.about-intro .about-main-text {
+    font-size: 23px;
+
+    color: #333333;
+}
+
+
+/* ========================================
+   SECCIONES SOBRE MÍ
+======================================== */
+
+.about-section {
+    padding: 80px 40px;
+}
+
+.about-section-title {
+    margin-bottom: 40px;
+
+    max-width: 700px;
+}
+
+.about-section-title h2 {
+    font-size: 42px;
+
+    line-height: 1.1;
+}
+
+
+/* ========================================
+   FORMACIÓN
+======================================== */
+
+.about-info-card {
+    padding: 40px;
+
+    background: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 14px;
+}
+
+.about-info-card h3 {
+    margin-bottom: 20px;
+
+    font-size: 27px;
+}
+
+.about-info-card p {
+    max-width: 800px;
+
+    margin-bottom: 14px;
+
+    color: #666666;
+
+    font-size: 17px;
+}
+
+
+/* ========================================
+   HABILIDADES
+======================================== */
+
+.about-skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.about-skill-card {
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.about-skill-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.about-skill-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 23px;
+}
+
+.about-skill-card p {
+    color: #666666;
+}
+
+
+/* ========================================
+   INTERESES
+======================================== */
+
+.interests-section {
+    padding-bottom: 120px;
+}
+
+.interests-list {
+    border-top: 1px solid #dddddd;
+}
+
+.interest-item {
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 30px;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.interest-item > span {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #888888;
+}
+
+.interest-item h3 {
+    margin-bottom: 8px;
+
+    font-size: 24px;
+}
+
+.interest-item p {
+    max-width: 700px;
+
+    color: #666666;
+}
+
+
+/* ========================================
+   RESPONSIVE SOBRE MÍ
+======================================== */
+
+@media (max-width: 900px) {
+
+    .about-hero {
+        grid-template-columns: 250px 1fr;
+
+        gap: 45px;
+
+        padding: 80px 30px;
+    }
+
+    .about-photo img {
+        height: 350px;
+    }
+
+    .about-intro h1 {
+        font-size: 55px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .about-hero {
+        grid-template-columns: 1fr;
+
+        padding: 60px 25px;
+
+        gap: 40px;
+    }
+
+    .about-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-photo img {
+    width: 230px;
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    border: 1px solid #dddddd;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+    }
+
+
+@media (max-width: 500px) {
+
+    .about-intro h1 {
+        font-size: 48px;
+    }
+
+    .about-intro .about-main-text {
+        font-size: 20px;
+    }
+
+    .about-section-title h2 {
+        font-size: 34px;
+    }
+
+    .about-info-card {
+        padding: 25px;
+    }
 
 }
