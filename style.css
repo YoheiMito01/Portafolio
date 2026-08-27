@@ -1,4 +1,4 @@
-/* ========================================
+﻿/* ========================================
 
    CONFIGURACIÓN GENERAL
 
@@ -1581,5 +1581,515 @@ border-top: 4px solid var(--rana-purple);
     .about-intro .about-main-text { font-size: 20px; }
 
     .about-info-card { padding: 25px; }
+
+}
+
+/* ========================================
+
+   TEMA TROMPO JUEGO
+
+   Requiere: <body class="trompo-page">
+
+======================================== */
+
+body.trompo-page {
+
+    --trompo-bg: #050611;
+
+    --trompo-surface: #0d0b20;
+
+    --trompo-cyan: #64eaff;
+
+    --trompo-pink: #ff5b78;
+
+    --trompo-magenta: #ec27ff;
+
+    --trompo-purple: #6417b8;
+
+    --trompo-text: #f3f7ff;
+
+    --trompo-muted: #b8b7ce;
+
+    background: var(--trompo-bg);
+
+    color: var(--trompo-text);
+
+}
+
+
+
+/* ========================================
+
+   HEADER
+
+======================================== */
+
+body.trompo-page .header {
+
+    background: rgba(5, 6, 17, 0.96);
+
+    border-bottom:
+
+        1px solid rgba(100, 234, 255, 0.35);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+
+body.trompo-page .logo {
+
+    color: var(--trompo-cyan);
+
+    text-shadow:
+
+        0 0 10px rgba(100, 234, 255, 0.7);
+
+}
+
+
+
+body.trompo-page .nav-links a {
+
+    color: #d9dcff;
+
+}
+
+
+
+body.trompo-page .nav-links a:hover {
+
+    color: var(--trompo-cyan);
+
+    text-shadow:
+
+        0 0 8px rgba(100, 234, 255, 0.8);
+
+}
+
+
+
+/* ========================================
+
+   HERO
+
+======================================== */
+
+body.trompo-page .project-page-hero {
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #050611 0%,
+
+            #0b0719 100%
+
+        );
+
+}
+
+
+
+body.trompo-page .eyebrow {
+
+    color: var(--trompo-cyan);
+
+}
+
+
+
+body.trompo-page .project-page-intro h1 {
+
+    color: var(--trompo-cyan);
+
+    text-shadow:
+
+        0 0 8px rgba(100, 234, 255, 0.8),
+
+        0 0 20px rgba(100, 234, 255, 0.45);
+
+}
+
+
+
+body.trompo-page .project-page-description {
+
+    color: var(--trompo-muted);
+
+}
+
+
+
+/* ========================================
+
+   TAGS
+
+======================================== */
+
+body.trompo-page .tags span {
+
+    background: #17112a;
+
+    color: var(--trompo-cyan);
+
+    border:
+
+        1px solid var(--trompo-purple);
+
+    box-shadow:
+
+        0 0 8px rgba(100, 234, 255, 0.12);
+
+}
+
+
+
+/* ========================================
+
+   PORTADA
+
+======================================== */
+
+body.trompo-page .project-page-cover img {
+
+    border:
+
+        2px solid var(--trompo-cyan);
+
+    box-shadow:
+
+        0 0 12px rgba(100, 234, 255, 0.45),
+
+        0 0 28px rgba(100, 234, 255, 0.18);
+
+}
+
+
+
+/* ========================================
+
+   SOBRE EL PROYECTO
+
+======================================== */
+
+body.trompo-page .project-info-section {
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #0c0719,
+
+            #14092a
+
+        );
+
+}
+
+
+
+body.trompo-page .project-info-section .eyebrow {
+
+    color: var(--trompo-pink);
+
+}
+
+
+
+body.trompo-page .project-info-title h2 {
+
+    color: white;
+
+}
+
+
+
+body.trompo-page .project-info-text p {
+
+    color: var(--trompo-muted);
+
+}
+
+
+
+/* GIF */
+
+body.trompo-page .project-gameplay-media img {
+
+    border:
+
+        2px solid var(--trompo-pink);
+
+    box-shadow:
+
+        0 0 10px rgba(255, 91, 120, 0.55),
+
+        0 0 24px rgba(236, 39, 255, 0.20);
+
+}
+
+
+
+/* ========================================
+
+   MI PARTICIPACIÓN
+
+======================================== */
+
+body.trompo-page .project-role-section {
+
+    background: var(--trompo-bg);
+
+}
+
+
+
+body.trompo-page .role-card {
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #0d0b20,
+
+            #130a27
+
+        );
+
+    border:
+
+        1px solid var(--trompo-purple);
+
+    box-shadow:
+
+        0 0 18px rgba(100, 23, 184, 0.15);
+
+}
+
+
+
+body.trompo-page .role-card:hover {
+
+    border-color: var(--trompo-cyan);
+
+    box-shadow:
+
+        0 0 16px rgba(100, 234, 255, 0.25);
+
+}
+
+
+
+body.trompo-page .role-number {
+
+    color: var(--trompo-pink);
+
+}
+
+
+
+body.trompo-page .role-card h3 {
+
+    color: var(--trompo-cyan);
+
+}
+
+
+
+body.trompo-page .role-card p {
+
+    color: var(--trompo-muted);
+
+}
+
+
+
+/* ========================================
+
+   MECÁNICAS
+
+======================================== */
+
+body.trompo-page .project-mechanics-section {
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #110722,
+
+            #080612
+
+        );
+
+}
+
+
+
+body.trompo-page .project-mechanics-section .eyebrow {
+
+    color: var(--trompo-pink);
+
+}
+
+
+
+body.trompo-page .project-mechanics-section h2 {
+
+    color: white;
+
+}
+
+
+
+body.trompo-page .mechanics-list {
+
+    border-top:
+
+        1px solid var(--trompo-purple);
+
+}
+
+
+
+body.trompo-page .mechanic-item {
+
+    border-bottom:
+
+        1px solid var(--trompo-purple);
+
+}
+
+
+
+body.trompo-page .mechanic-item h3 {
+
+    color: var(--trompo-cyan);
+
+}
+
+
+
+body.trompo-page .mechanic-item p {
+
+    color: var(--trompo-muted);
+
+}
+
+
+
+/* ========================================
+
+   GALERÍA
+
+======================================== */
+
+body.trompo-page .project-gallery-section {
+
+    background: var(--trompo-bg);
+
+}
+
+
+
+body.trompo-page .project-gallery-section h2 {
+
+    color: white;
+
+}
+
+
+
+body.trompo-page .project-gallery img {
+
+    border:
+
+        2px solid var(--trompo-purple);
+
+    box-shadow:
+
+        0 0 12px rgba(236, 39, 255, 0.25);
+
+}
+
+
+
+body.trompo-page .project-gallery img:hover {
+
+    border-color: var(--trompo-cyan);
+
+    box-shadow:
+
+        0 0 18px rgba(100, 234, 255, 0.35);
+
+}
+
+
+
+/* ========================================
+
+   BOTÓN VOLVER
+
+======================================== */
+
+body.trompo-page .button.secondary {
+
+    background: transparent;
+
+    color: var(--trompo-cyan);
+
+    border:
+
+        1px solid var(--trompo-cyan);
+
+    box-shadow:
+
+        0 0 10px rgba(100, 234, 255, 0.25);
+
+}
+
+
+
+body.trompo-page .button.secondary:hover {
+
+    background: var(--trompo-cyan);
+
+    color: var(--trompo-bg);
+
+    box-shadow:
+
+        0 0 18px rgba(100, 234, 255, 0.55);
+
+}
+
+
+
+/* ========================================
+
+   FOOTER
+
+======================================== */
+
+body.trompo-page .footer {
+
+    margin-top: 0;
+
+    background: #03040c;
+
+    color: #9fa5bd;
+
+    border-top:
+
+        1px solid var(--trompo-purple);
 
 }
