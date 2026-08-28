@@ -214,6 +214,159 @@ main {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* ========================================
+   COLORES DE TARJETAS DE PROYECTOS
+======================================== */
+
+
+/* ========================================
+   RANA JUEGO
+======================================== */
+
+/* Fondo de la imagen */
+.rana-image {
+    background: linear-gradient(
+        135deg,
+        #e95588,
+        #d982b0,
+        #b8f58f
+    );
+}
+
+/* Tarjeta del INDEX + tarjeta de PROYECTOS */
+.project-card:has(.rana-image),
+.project-detail:has(.rana-image) {
+    background: #eaa5bf;
+    border-color: #6b4393;
+    color: #2a1b3a;
+}
+
+/* Tipo de proyecto */
+.project-card:has(.rana-image) .project-type,
+.project-detail:has(.rana-image) .project-type {
+    color: #6b4393;
+}
+
+/* Títulos */
+.project-card:has(.rana-image) h3,
+.project-detail:has(.rana-image) h2 {
+    color: #2a1b3a;
+}
+
+/* Descripciones */
+.project-card:has(.rana-image) .project-content > p:not(.project-type),
+.project-detail:has(.rana-image) .project-detail-content p:not(.project-type) {
+    color: #49305f;
+}
+
+/* Texto dentro de la imagen */
+.rana-image span {
+    color: #2a1b3a;
+}
+
+/* Etiquetas */
+.project-card:has(.rana-image) .tags span,
+.project-detail:has(.rana-image) .tags span {
+    background: #b8f58f;
+    color: #2a1b3a;
+    border-color: #6b4393;
+}
+
+/* Enlaces y botones */
+.project-card:has(.rana-image) .project-link,
+.project-detail:has(.rana-image) .project-button {
+    color: #6b4393;
+}
+
+.project-card:has(.rana-image) .project-link:hover {
+    color: #b13861;
+}
+
+.project-detail:has(.rana-image) .project-button {
+    background: #b8f58f;
+    border-color: #6b4393;
+    color: #2a1b3a;
+}
+
+.project-detail:has(.rana-image) .project-button:hover {
+    background: #d4ffb6;
+}
+
+
+/* ========================================
+   TROMPO JUEGO
+======================================== */
+
+/* Fondo de la imagen */
+.trompo-image {
+    background: linear-gradient(
+        135deg,
+        #050611,
+        #10142c,
+        #241044
+    );
+}
+
+/* Tarjeta del INDEX + tarjeta de PROYECTOS */
+.project-card:has(.trompo-image),
+.project-detail:has(.trompo-image) {
+    background: #0d0b20;
+    border-color: #6417b8;
+    color: #f3f7ff;
+}
+
+/* Tipo de proyecto */
+.project-card:has(.trompo-image) .project-type,
+.project-detail:has(.trompo-image) .project-type {
+    color: #ff5b78;
+}
+
+/* Títulos */
+.project-card:has(.trompo-image) h3,
+.project-detail:has(.trompo-image) h2 {
+    color: #64eaff;
+}
+
+/* Descripciones */
+.project-card:has(.trompo-image) .project-content > p:not(.project-type),
+.project-detail:has(.trompo-image) .project-detail-content p:not(.project-type) {
+    color: #b8b7ce;
+}
+
+/* Texto dentro de la imagen */
+.trompo-image span {
+    color: #64eaff;
+}
+
+/* Etiquetas */
+.project-card:has(.trompo-image) .tags span,
+.project-detail:has(.trompo-image) .tags span {
+    background: #17112a;
+    color: #64eaff;
+    border-color: #6417b8;
+}
+
+/* Enlaces y botones */
+.project-card:has(.trompo-image) .project-link,
+.project-detail:has(.trompo-image) .project-button {
+    color: #64eaff;
+}
+
+.project-card:has(.trompo-image) .project-link:hover {
+    color: #ff5b78;
+}
+
+.project-detail:has(.trompo-image) .project-button {
+    background: #10142c;
+    border-color: #64eaff;
+    color: #64eaff;
+}
+
+.project-detail:has(.trompo-image) .project-button:hover {
+    background: #6417b8;
+    color: #f3f7ff;
+}
+
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
