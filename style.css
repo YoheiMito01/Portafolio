@@ -271,149 +271,141 @@ main {
 .hero {
     min-height: 680px;
     padding: 80px 40px;
-
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(350px, 0.9fr);
-
-    gap: 70px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+    gap: 55px;
     align-items: center;
 }
 
-
 .hero-text {
-    max-width: 720px;
+    min-width: 0;
+    max-width: 700px;
 }
-
 
 .hero h1 {
     margin-bottom: 25px;
-    font-size: clamp(55px, 7vw, 95px);
+    font-size: clamp(55px, 6.5vw, 92px);
     line-height: 0.95;
     letter-spacing: -4px;
 }
 
+.hero h1 span {
+    color: #ff9138;
+}
 
 .hero-description {
     max-width: 620px;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
     font-size: 20px;
     color: var(--muted);
 }
 
-
-/* ========================================
-   HERRAMIENTAS DEL HERO
-======================================== */
-
 .hero-tools {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-
+    gap: 9px;
     margin-bottom: 30px;
 }
 
-
 .hero-tools span {
-    padding: 7px 12px;
-
+    padding: 7px 11px;
     background: var(--soft);
     border: 1px solid var(--border);
     border-radius: 6px;
-
+    color: #f6d5b2;
     font-size: 13px;
     font-weight: 700;
 }
 
-
-/* ========================================
-   PROYECTOS DEL HERO
-======================================== */
-
-.hero-projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.hero-buttons {
+    display: flex;
     gap: 15px;
-
-    align-items: stretch;
+    flex-wrap: wrap;
 }
 
+.hero-projects {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
 
 .hero-project {
     position: relative;
-
     min-width: 0;
-    min-height: 360px;
-
+    height: 360px;
     overflow: hidden;
-
     border: 1px solid var(--border);
     border-radius: 14px;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    background: var(--surface);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 
 .hero-project:hover {
     transform: translateY(-6px);
-
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.30);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.30);
 }
 
-
 .hero-project img {
-    width: 100%;
-    height: 100%;
-
     position: absolute;
     inset: 0;
-
+    width: 100%;
+    height: 100%;
+    max-width: none;
     object-fit: cover;
 }
 
-
 .hero-project::after {
     content: "";
-
     position: absolute;
     inset: 0;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.9),
-            rgba(0, 0, 0, 0.05) 65%
-        );
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.35) 38%,
+        rgba(0, 0, 0, 0.02) 72%
+    );
+    pointer-events: none;
 }
-
 
 .hero-project-info {
     position: absolute;
-
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
     z-index: 2;
 }
 
-
 .hero-project-info span {
     display: block;
-
-    margin-bottom: 5px;
-
+    margin-bottom: 4px;
+    color: #fff;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-
 .hero-project-info h3 {
+    color: #fff;
     font-size: 22px;
+    line-height: 1.1;
+}
+
+.hero-project.trompo-card .hero-project-info span {
+    color: #ff5b78;
+}
+
+.hero-project.trompo-card .hero-project-info h3 {
+    color: #64eaff;
+}
+
+.hero-project.rana-card .hero-project-info span {
+    color: #b8f58f;
+}
+
+.hero-project.rana-card .hero-project-info h3 {
+    color: #fff4f8;
 }
 
 .projects-section,
@@ -472,6 +464,13 @@ main {
 
     font-weight: 700;
 
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
 }
 
 .click-clash-image { background: #4a2c19; }
@@ -1475,6 +1474,80 @@ body.rana-page .footer {
 }
 
 /* ========================================
+   CONTACTO
+======================================== */
+
+.contact-header {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.contact-header h2 {
+    margin-bottom: 12px;
+    color: var(--text);
+    font-size: 38px;
+}
+
+.contact-header > p:last-child {
+    color: var(--muted);
+}
+
+.contact-links {
+    width: min(100%, 760px);
+    margin: 0 auto 35px;
+    display: grid;
+    gap: 12px;
+}
+
+.contact-card {
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    background: var(--soft);
+    border-color: #e8873c;
+}
+
+.contact-icon,
+.contact-arrow {
+    max-width: 42px;
+    overflow: hidden;
+    color: #e8873c;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.contact-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info span {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.contact-info strong {
+    overflow-wrap: anywhere;
+    color: var(--text);
+    font-size: 15px;
+}
+
+/* ========================================
 
    FOOTER
 
@@ -1503,6 +1576,21 @@ body.rana-page .footer {
 ======================================== */
 
 @media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .hero-text {
+        max-width: 760px;
+    }
+
+    .hero-projects {
+        width: 100%;
+        max-width: 760px;
+    }
+
+
 
     .projects-grid { grid-template-columns: 1fr; }
 
@@ -1572,30 +1660,6 @@ body.rana-page .footer {
 
 }
 
-@media (max-width: 900px) {
-
-    .hero {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
-    .hero-projects {
-        max-width: 650px;
-    }
-
-}
-@media (max-width: 600px) {
-
-    .hero-projects {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-project {
-        min-height: 260px;
-    }
-
-}
-
 @media (max-width: 700px) {
 
     .about-hero {
@@ -1617,6 +1681,15 @@ body.rana-page .footer {
 }
 
 @media (max-width: 600px) {
+    .hero-projects {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-project {
+        height: 260px;
+    }
+
+
 
     .navbar {
 
