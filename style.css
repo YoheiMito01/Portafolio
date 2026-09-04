@@ -1,1305 +1,2263 @@
 ﻿:root {
-    --bg: #1b1d1f;
-    --surface: #242629;
-    --text: #e6e6e2;
-    --muted: #9a9b97;
-    --border: #36383b;
-    --soft: #2d2f32;
+
+    --bg: #191510;
+
+    --surface: #282018;
+
+    --text: #fff3df;
+
+    --muted: #c9aa88;
+
+    --border: #55402c;
+
+    --soft: #36291e;
+
     --shadow: rgba(0, 0, 0, 0.28);
+
 }
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 html { scroll-behavior: smooth; }
 
 body {
+
     font-family: Arial, Helvetica, sans-serif;
+
     background: var(--bg);
+
     color: var(--text);
+
     line-height: 1.6;
+
 }
 
 a {
+
     color: inherit;
+
     text-decoration: none;
+
 }
 
 img {
+
     max-width: 100%;
+
     display: block;
+
 }
 
 main {
+
     max-width: 1200px;
+
     margin: 0 auto;
+
 }
 
 /* ========================================
+
    HEADER
+
 ======================================== */
 
 .header {
+
     position: sticky;
+
     top: 0;
+
     z-index: 100;
-    background: rgba(27, 29, 31, 0.94);
+
+    background: rgba(25, 21, 16, 0.94);
+
     border-bottom: 1px solid var(--border);
+
     backdrop-filter: blur(10px);
+
 }
 
 .navbar {
+
     max-width: 1200px;
+
     margin: 0 auto;
+
     padding: 20px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
 }
 
 .logo {
+
     font-size: 20px;
+
     font-weight: 700;
+
 }
 
 .nav-links {
+
     display: flex;
+
     gap: 30px;
+
     flex-wrap: wrap;
+
 }
 
 .nav-links a {
+
     font-size: 15px;
-    color: #a4a5a1;
+
+    color: #d1af8a;
+
     transition: color 0.2s ease;
+
 }
 
 .nav-links a:hover {
-    color: #f2f2ee;
+
+    color: #ff9b42;
+
 }
 
 /* ========================================
+
    ELEMENTOS REUTILIZABLES
+
 ======================================== */
 
 .eyebrow {
+
     margin-bottom: 12px;
+
     font-size: 13px;
+
     font-weight: 700;
+
     letter-spacing: 2px;
+
     color: var(--muted);
+
 }
 
 .section-heading,
+
 .about-section-title,
+
 .project-info-title {
+
     max-width: 700px;
+
 }
 
 .section-heading { margin-bottom: 45px; }
+
 .about-section-title { margin-bottom: 40px; }
 
 .section-heading h2,
+
 .about-section-title h2,
+
 .project-info-title h2 {
+
     font-size: 42px;
+
     line-height: 1.1;
+
 }
 
 .section-heading h2 { margin-bottom: 12px; }
+
 .section-heading > p:last-child { color: var(--muted); }
 
 .button {
+
     display: inline-block;
+
     padding: 13px 22px;
+
     border-radius: 8px;
+
     font-size: 15px;
+
     font-weight: 700;
+
     transition: transform 0.2s ease, background 0.2s ease;
+
 }
 
 .button:hover {
+
     transform: translateY(-3px);
+
 }
 
 .button.primary {
-    background: var(--text);
-    color: #1b1d1f;
+
+    background: #ff8a32;
+
+    color: #211309;
+
 }
 
 .button.primary:hover {
-    background: #cfcfca;
+
+    background: #ffb24d;
+
 }
 
 .button.secondary {
-    background: #26282b;
-    border: 1px solid #3d4043;
+
+    background: #302319;
+
+    border: 1px solid #65452d;
+
 }
 
 .button.secondary:hover {
+
     background: var(--soft);
+
 }
 
 .tags {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 7px;
+
     margin-bottom: 25px;
+
 }
 
 .tags span {
+
     padding: 5px 9px;
+
     background: var(--soft);
+
     border-radius: 5px;
+
     font-size: 12px;
-    color: #a4a5a1;
+
+    color: #d1af8a;
+
 }
 
 /* ========================================
+
    INDEX
+
 ======================================== */
 
 .hero {
-    min-height: 650px;
-    padding: 100px 40px;
-    display: flex;
+    min-height: 680px;
+    padding: 80px 40px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(350px, 0.9fr);
+
+    gap: 70px;
     align-items: center;
 }
 
+
 .hero-text {
-    max-width: 800px;
+    max-width: 720px;
 }
+
 
 .hero h1 {
     margin-bottom: 25px;
-    font-size: clamp(55px, 8vw, 100px);
+    font-size: clamp(55px, 7vw, 95px);
     line-height: 0.95;
     letter-spacing: -4px;
 }
 
-.hero h1 span { color: #a4a5a1; }
 
 .hero-description {
-    max-width: 650px;
-    margin-bottom: 35px;
-    font-size: 21px;
-    color: #a4a5a1;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.projects-section,
-.skills-section {
-    padding: 100px 40px;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.project-card {
-    overflow: hidden;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
-}
-
-.project-image {
-    height: 230px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #303236;
-    font-size: 25px;
-    font-weight: 700;
-}
-
-.click-clash-image { background: #2f3134; }
-.trompo-image { background: #292b2e; }
-.rana-image { background: #34363a; }
-
-.project-image span,
-.project-detail-image span {
-    color: #c9cac6;
-}
-
-.project-content {
-    padding: 25px;
-}
-
-.project-type {
-    margin-bottom: 12px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #8d8f8b;
-}
-
-.project-content h3 {
-    margin-bottom: 12px;
-    font-size: 27px;
-}
-
-.project-content > p:not(.project-type) {
-    min-height: 100px;
-    margin-bottom: 20px;
-    color: var(--muted);
-}
-
-.project-link {
-    font-weight: 700;
-    transition: color 0.2s ease;
-}
-
-.project-link:hover {
-    color: var(--muted);
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.skill {
-    padding: 25px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-}
-
-.skill h3 {
-    margin-bottom: 10px;
-    font-size: 21px;
-}
-
-.skill p {
-    color: var(--muted);
-}
-
-/* ========================================
-   PAGINA PROYECTOS
-======================================== */
-
-.page-header {
-    padding: 100px 40px 70px;
-}
-
-.page-header h1 {
-    margin-bottom: 20px;
-    font-size: clamp(55px, 8vw, 90px);
-    line-height: 0.95;
-    letter-spacing: -3px;
-}
-
-.page-header > p:last-child {
-    max-width: 700px;
+    max-width: 620px;
+    margin-bottom: 25px;
     font-size: 20px;
     color: var(--muted);
 }
 
-.projects-list {
+
+/* ========================================
+   HERRAMIENTAS DEL HERO
+======================================== */
+
+.hero-tools {
     display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 0 40px 80px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 30px;
 }
 
-.project-detail {
-    display: grid;
-    grid-template-columns: 42% 58%;
-    min-height: 450px;
-    overflow: hidden;
-    background: var(--surface);
+
+.hero-tools span {
+    padding: 7px 12px;
+
+    background: var(--soft);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+    border-radius: 6px;
 
-.project-detail:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px var(--shadow);
-}
-
-.project-detail-image {
-    min-height: 450px;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
+    font-size: 13px;
     font-weight: 700;
 }
 
-.project-detail-content {
-    padding: 50px;
+
+/* ========================================
+   PROYECTOS DEL HERO
+======================================== */
+
+.hero-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    align-items: stretch;
+}
+
+
+.hero-project {
+    position: relative;
+
+    min-width: 0;
+    min-height: 360px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.hero-project:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.30);
+}
+
+
+.hero-project img {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+
+    object-fit: cover;
+}
+
+
+.hero-project::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.05) 65%
+        );
+}
+
+
+.hero-project-info {
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 2;
+}
+
+
+.hero-project-info span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+.hero-project-info h3 {
+    font-size: 22px;
+}
+
+.projects-section,
+
+.skills-section {
+
+    padding: 100px 40px;
+
+}
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+}
+
+.project-card {
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+}
+
+.project-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
+
+}
+
+.project-image {
+
+    height: 230px;
+
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #3a291c;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
 }
 
-.project-detail-content h2 {
-    margin-bottom: 18px;
-    font-size: 42px;
-    line-height: 1.05;
+.click-clash-image { background: #4a2c19; }
+
+.trompo-image { background: #292b2e; }
+
+.rana-image { background: #0054fd; }
+
+.project-image span,
+
+.project-detail-image span {
+
+    color: #f6d5b2;
+
 }
 
-.project-detail-content p:not(.project-type) {
-    max-width: 650px;
-    margin-bottom: 18px;
+.project-content {
+
+    padding: 25px;
+
+}
+
+.project-type {
+
+    margin-bottom: 12px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #e8873c;
+
+}
+
+.project-content h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 27px;
+
+}
+
+.project-content > p:not(.project-type) {
+
+    min-height: 100px;
+
+    margin-bottom: 20px;
+
     color: var(--muted);
-    font-size: 17px;
+
 }
 
-.project-detail-content .tags {
-    margin-top: 25px;
-    margin-bottom: 0;
+.project-link {
+
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+
 }
 
-.project-button {
-    align-self: flex-start;
-    margin-top: 35px;
-    padding: 14px 24px;
+.project-link:hover {
+
+    color: var(--muted);
+
+}
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+.skill {
+
+    padding: 25px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+}
+
+.skill h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 21px;
+
+}
+
+.skill p {
+
+    color: var(--muted);
+
 }
 
 /* ========================================
+
+   PAGINA PROYECTOS
+
+======================================== */
+
+.page-header {
+
+    padding: 100px 40px 70px;
+
+}
+
+.page-header h1 {
+
+    margin-bottom: 20px;
+
+    font-size: clamp(55px, 8vw, 90px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+}
+
+.page-header > p:last-child {
+
+    max-width: 700px;
+
+    font-size: 20px;
+
+    color: var(--muted);
+
+}
+
+.projects-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 50px;
+
+    padding: 0 40px 80px;
+
+}
+
+.project-detail {
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    min-height: 450px;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+}
+
+.project-detail:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px var(--shadow);
+
+}
+
+.project-detail-image {
+
+    min-height: 450px;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+.project-detail-content {
+
+    padding: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+.project-detail-content h2 {
+
+    margin-bottom: 18px;
+
+    font-size: 42px;
+
+    line-height: 1.05;
+
+}
+
+.project-detail-content p:not(.project-type) {
+
+    max-width: 650px;
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+}
+
+.project-detail-content .tags {
+
+    margin-top: 25px;
+
+    margin-bottom: 0;
+
+}
+
+.project-button {
+
+    align-self: flex-start;
+
+    margin-top: 35px;
+
+    padding: 14px 24px;
+
+}
+
+/* ========================================
+
    SOBRE MI
+
 ======================================== */
 
 .about-hero {
+
     min-height: 560px;
+
     padding: 90px 40px;
+
     display: grid;
+
     grid-template-columns: 260px 1fr;
+
     gap: 60px;
+
     align-items: center;
+
 }
 
 .about-photo {
+
     display: flex;
+
     justify-content: center;
+
 }
 
 .about-photo img {
+
     width: 250px;
+
     height: 310px;
+
     object-fit: cover;
+
     border-radius: 16px;
+
     border: 1px solid var(--border);
+
     box-shadow: 0 10px 25px var(--shadow);
+
 }
 
 .about-intro {
+
     max-width: 720px;
+
 }
 
 .about-intro h1 {
+
     margin-bottom: 30px;
+
     font-size: clamp(55px, 7vw, 85px);
+
     line-height: 0.95;
+
     letter-spacing: -3px;
+
 }
 
 .about-intro p {
+
     margin-bottom: 18px;
+
     font-size: 18px;
+
     color: var(--muted);
+
 }
 
 .about-intro .about-main-text {
+
     font-size: 23px;
-    color: #c9cac6;
+
+    color: #f6d5b2;
+
 }
 
 .about-section { padding: 80px 40px; }
 
 .about-info-card,
+
 .about-skill-card {
+
     background: var(--surface);
+
     border: 1px solid var(--border);
+
     border-radius: 14px;
+
 }
 
 .about-info-card {
+
     padding: 40px;
+
 }
 
 .about-info-card h3 {
+
     margin-bottom: 20px;
+
     font-size: 27px;
+
 }
 
 .about-info-card p {
+
     max-width: 800px;
+
     margin-bottom: 14px;
+
     color: var(--muted);
+
     font-size: 17px;
+
 }
 
 .about-skills-grid {
+
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 20px;
+
 }
 
 .about-skill-card {
+
     padding: 30px;
+
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
 .about-skill-card:hover {
+
     transform: translateY(-5px);
+
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.24);
+
 }
 
 .about-skill-card h3 {
+
     margin-bottom: 10px;
+
     font-size: 23px;
+
 }
 
 .about-skill-card p,
+
 .interest-item p {
+
     color: var(--muted);
+
 }
 
 .interests-section { padding-bottom: 120px; }
 
 .interests-list {
+
     border-top: 1px solid var(--border);
+
 }
 
 .interest-item {
+
     display: grid;
+
     grid-template-columns: 80px 1fr;
+
     gap: 30px;
+
     padding: 30px 0;
+
     border-bottom: 1px solid var(--border);
+
 }
 
 .interest-item > span {
+
     font-size: 14px;
+
     font-weight: 700;
-    color: #7f817d;
+
+    color: #ff9138;
+
 }
 
 .interest-item h3 {
+
     margin-bottom: 8px;
+
     font-size: 24px;
+
 }
 
 .interest-item p {
+
     max-width: 700px;
+
 }
 
 /* ========================================
+
    PAGINA INDIVIDUAL DE PROYECTO
+
 ======================================== */
 
 .project-page-hero {
+
     padding: 80px 40px;
+
     display: grid;
+
     grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+
     gap: 45px;
+
     align-items: center;
+
 }
 
 .project-page-intro h1 {
+
     margin-bottom: 25px;
+
     font-size: clamp(55px, 8vw, 90px);
+
     line-height: 0.95;
+
     letter-spacing: -3px;
+
 }
 
 .project-page-description {
+
     max-width: 650px;
+
     margin-bottom: 25px;
+
     font-size: 20px;
+
     color: var(--muted);
+
 }
 
 .project-page-cover {
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
 }
 
 .project-page-cover img,
+
 .project-cover-image {
+
     width: min(100%, 380px);
+
     height: 220px;
+
     display: block;
+
     object-fit: contain;
+
     border-radius: 14px;
+
 }
 
 .project-cover-placeholder {
+
     width: min(100%, 380px);
+
     min-height: 220px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     background: #34363a;
-    border: 1px solid #3b3e41;
+
+    border: 1px solid #65452d;
+
     border-radius: 14px;
+
     font-size: 28px;
+
     font-weight: 700;
+
 }
 
 .project-info-section {
+
     padding: 75px 40px;
+
     display: grid;
+
     grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+
     gap: 55px;
+
     align-items: start;
+
 }
 
 .project-info-text p {
+
     margin-bottom: 20px;
+
     font-size: 18px;
+
     color: var(--muted);
+
 }
 
 .project-gameplay-media {
+
     margin-top: 25px;
+
     display: flex;
+
     justify-content: flex-start;
+
 }
 
 .project-gameplay-media img {
+
     width: min(100%, 300px);
+
     height: 175px;
+
     display: block;
+
     object-fit: contain;
+
     border-radius: 12px;
+
 }
 
 .project-role-section,
+
 .project-mechanics-section,
+
 .project-gallery-section {
+
     padding: 80px 40px;
+
 }
 
 .project-role-header { margin-bottom: 30px; }
 
 .role-grid {
+
     display: grid;
+
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 20px;
+
 }
 
 .role-card {
+
     padding: 30px;
+
     background: var(--surface);
+
     border: 1px solid var(--border);
+
     border-radius: 14px;
+
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
 .role-card:hover {
+
     transform: translateY(-5px);
+
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.24);
+
 }
 
 .role-number {
+
     display: block;
+
     margin-bottom: 35px;
+
     font-size: 13px;
+
     font-weight: 700;
-    color: #7f817d;
+
+    color: #ff9138;
+
 }
 
 .role-card h3 {
+
     margin-bottom: 12px;
+
     font-size: 24px;
+
 }
 
 .role-card p {
+
     color: var(--muted);
+
 }
 
 .mechanics-list {
+
     margin-top: 40px;
+
     border-top: 1px solid var(--border);
+
 }
 
 .mechanic-item {
+
     display: grid;
+
     grid-template-columns: 260px 1fr;
+
     gap: 40px;
+
     padding: 25px 0;
+
     border-bottom: 1px solid var(--border);
+
 }
 
 .mechanic-item h3 {
+
     font-size: 22px;
+
 }
 
 .mechanic-item p {
+
     max-width: 700px;
+
     color: var(--muted);
+
 }
 
 .project-gallery {
+
     margin-top: 35px;
+
     display: grid;
+
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 18px;
+
 }
 
 .project-gallery img,
+
 .gallery-image {
+
     width: 100%;
+
     height: 155px;
+
     display: block;
+
     object-fit: cover;
+
     border-radius: 10px;
+
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
 .project-gallery img:hover,
+
 .gallery-image:hover {
+
     transform: translateY(-4px);
+
 }
 
 .gallery-placeholder {
+
     min-height: 155px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
-    background: #303236;
+
+    background: #3a291c;
+
     border-radius: 10px;
-    color: #a4a5a1;
+
+    color: #d1af8a;
+
 }
 
 .project-back-section {
+
     padding: 30px 40px 90px;
+
 }
 
 /* ========================================
+
    TEMA EL RANA
+
 ======================================== */
 
 body.rana-page {
+
     --rana-pink: #e95588;
+
     --rana-dark-pink: #d13d70;
+
     --rana-deep-pink: #b13861;
+
     --rana-green: #b8f58f;
+
     --rana-purple: #6b4393;
+
     --rana-dark-purple: #2a1b3a;
+
     --rana-light: #fff4f8;
+
     background: var(--rana-pink);
+
     color: var(--rana-dark-purple);
+
 }
 
 body.rana-page .header {
+
     background: var(--rana-dark-pink);
+
     border-bottom: 4px solid var(--rana-deep-pink);
+
     backdrop-filter: none;
+
 }
 
 body.rana-page .logo {
+
     color: var(--rana-green);
+
     text-shadow: 2px 2px 0 var(--rana-purple);
+
 }
 
 body.rana-page .nav-links a {
+
     color: white;
+
     font-weight: 700;
+
 }
 
 body.rana-page .nav-links a:hover {
+
     color: var(--rana-green);
+
 }
 
 body.rana-page .project-page-hero,
+
 body.rana-page .project-role-section,
+
 body.rana-page .project-gallery-section {
+
     background: var(--rana-pink);
+
 }
 
 body.rana-page .eyebrow {
+
     color: var(--rana-dark-purple);
+
 }
 
 body.rana-page .project-page-intro h1 {
+
     color: var(--rana-green);
+
     text-shadow: 3px 3px 0 var(--rana-purple);
+
 }
 
 body.rana-page .project-page-description {
+
     color: var(--rana-dark-purple);
+
 }
 
 body.rana-page .tags span {
+
     background: var(--rana-purple);
+
     color: white;
+
     border: 2px solid var(--rana-dark-purple);
+
 }
 
 body.rana-page .project-page-cover img,
+
 body.rana-page .project-cover-image,
+
 body.rana-page .project-cover-placeholder,
+
 body.rana-page .project-gameplay-media img,
+
 body.rana-page .project-gallery img,
+
 body.rana-page .gallery-image {
+
     border: 3px solid var(--rana-purple);
+
     box-shadow: 6px 6px 0 var(--rana-deep-pink);
+
 }
 
 body.rana-page .project-cover-placeholder {
+
     background: var(--rana-dark-pink);
+
     color: var(--rana-green);
+
 }
 
 body.rana-page .project-info-section,
+
 body.rana-page .project-mechanics-section {
+
     background: var(--rana-dark-pink);
+
     color: white;
+
 }
 
 body.rana-page .project-info-section .eyebrow,
+
 body.rana-page .project-mechanics-section .eyebrow,
+
 body.rana-page .mechanic-item h3 {
+
     color: var(--rana-green);
+
 }
 
 body.rana-page .project-info-title h2,
+
 body.rana-page .project-mechanics-section h2 {
+
     color: white;
+
 }
 
 body.rana-page .project-info-text p,
+
 body.rana-page .mechanic-item p {
+
     color: var(--rana-light);
+
 }
 
 body.rana-page .role-card {
+
     background: var(--rana-dark-pink);
+
     color: white;
+
     border: 3px solid var(--rana-purple);
+
     box-shadow: 5px 5px 0 var(--rana-deep-pink);
+
 }
 
 body.rana-page .role-card:hover {
+
     border-color: var(--rana-green);
+
 }
 
 body.rana-page .role-number {
+
     color: var(--rana-green);
+
 }
 
 body.rana-page .role-card p {
+
     color: var(--rana-light);
+
 }
 
 body.rana-page .mechanics-list,
+
 body.rana-page .mechanic-item {
+
     border-color: var(--rana-purple);
+
 }
 
 body.rana-page .button.secondary {
+
     background: var(--rana-green);
+
     color: var(--rana-dark-purple);
+
     border: 3px solid var(--rana-purple);
+
     box-shadow: 4px 4px 0 var(--rana-dark-purple);
+
 }
 
 body.rana-page .button.secondary:hover {
+
     background: #d4ffb6;
+
 }
 
 body.rana-page .footer {
+
     margin-top: 0;
+
     background: var(--rana-deep-pink);
+
     color: white;
+
     border-top: 4px solid var(--rana-purple);
+
 }
 
 /* ========================================
+
    FOOTER
+
 ======================================== */
 
 .footer {
+
     margin-top: 50px;
+
     padding: 35px 20px;
+
     border-top: 1px solid var(--border);
+
     text-align: center;
-    color: #8d8f8b;
+
+    color: #e8873c;
+
     font-size: 14px;
+
 }
 
 /* ========================================
+
    RESPONSIVE
+
 ======================================== */
 
 @media (max-width: 900px) {
+
     .projects-grid { grid-template-columns: 1fr; }
+
     .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
     .project-detail,
+
     .project-page-hero,
+
     .project-info-section {
+
         grid-template-columns: 1fr;
+
     }
 
     .projects-list {
+
         gap: 35px;
+
         padding: 0 25px 60px;
+
     }
 
     .project-detail-image { min-height: 300px; }
+
     .project-detail-content {
+
         min-height: 400px;
+
         padding: 40px;
+
     }
 
     .about-hero {
+
         grid-template-columns: 230px 1fr;
+
         gap: 45px;
+
         padding: 80px 30px;
+
     }
 
     .project-page-hero {
+
         gap: 35px;
+
         padding: 70px 30px;
+
     }
 
     .project-info-section {
+
         gap: 35px;
+
         padding: 65px 30px;
+
     }
 
     .project-page-cover { justify-content: flex-start; }
+
     .role-grid { grid-template-columns: 1fr; }
+
     .project-gallery img,
+
     .gallery-image { height: 180px; }
+
+}
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .hero-projects {
+        max-width: 650px;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .hero-projects {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-project {
+        min-height: 260px;
+    }
+
 }
 
 @media (max-width: 700px) {
+
     .about-hero {
+
         grid-template-columns: 1fr;
+
         padding: 60px 25px;
+
         gap: 40px;
+
     }
 
     .about-skills-grid { grid-template-columns: 1fr; }
+
     .about-section { padding: 60px 25px; }
+
     .interest-item { grid-template-columns: 50px 1fr; }
+
 }
 
 @media (max-width: 600px) {
+
     .navbar {
+
         flex-direction: column;
+
         gap: 15px;
+
     }
 
     .nav-links {
+
         gap: 15px;
+
         justify-content: center;
+
     }
 
     .hero {
+
         min-height: 550px;
+
         padding: 70px 25px;
+
     }
 
     .hero h1 {
+
         font-size: 60px;
+
         letter-spacing: -2px;
+
     }
 
     .hero-description { font-size: 18px; }
 
     .hero-buttons {
+
         flex-direction: column;
+
         align-items: flex-start;
+
     }
 
     .projects-section,
+
     .skills-section,
+
     .project-role-section,
+
     .project-mechanics-section,
+
     .project-gallery-section {
+
         padding: 60px 25px;
+
     }
 
     .skills-grid,
+
     .project-gallery {
+
         grid-template-columns: 1fr;
+
     }
 
     .page-header { padding: 70px 25px 50px; }
+
     .page-header h1 { font-size: 55px; }
+
     .projects-list { padding: 0 20px 50px; }
+
     .project-detail-image {
+
         min-height: 230px;
+
         font-size: 25px;
+
     }
 
     .project-detail-content {
+
         min-height: 420px;
+
         padding: 30px;
+
     }
 
     .project-detail-content h2 { font-size: 35px; }
+
     .project-page-hero { padding: 55px 25px; }
+
     .project-page-cover img,
+
     .project-cover-image {
+
         width: min(100%, 330px);
+
         height: 190px;
+
     }
 
     .project-cover-placeholder {
+
         width: min(100%, 330px);
+
         min-height: 190px;
+
     }
 
     .project-gameplay-media img {
+
         width: min(100%, 280px);
+
         height: 160px;
+
     }
 
     .project-info-title h2,
+
     .about-section-title h2 {
+
         font-size: 34px;
+
     }
 
     .mechanic-item {
+
         grid-template-columns: 1fr;
+
         gap: 10px;
+
     }
 
     .project-gallery img,
+
     .gallery-image {
+
         height: 175px;
+
     }
 
     .project-back-section { padding: 20px 25px 70px; }
+
 }
 
 @media (max-width: 500px) {
+
     .about-intro h1 { font-size: 48px; }
+
     .about-intro .about-main-text { font-size: 20px; }
+
     .about-info-card { padding: 25px; }
+
 }
 
 /* ========================================
+
    TEMA TROMPO JUEGO
+
 ======================================== */
 
 body.trompo-page {
+
     --trompo-bg: #050611;
+
     --trompo-surface: #0d0b20;
+
     --trompo-cyan: #64eaff;
+
     --trompo-pink: #ff5b78;
+
     --trompo-magenta: #ec27ff;
+
     --trompo-purple: #6417b8;
+
     --trompo-text: #f3f7ff;
+
     --trompo-muted: #b8b7ce;
+
     background: var(--trompo-bg);
+
     color: var(--trompo-text);
+
 }
 
 body.trompo-page .header {
+
     background: rgba(5, 6, 17, 0.96);
+
     border-bottom: 1px solid rgba(100, 234, 255, 0.35);
+
     backdrop-filter: blur(12px);
+
 }
 
 body.trompo-page .logo {
+
     color: var(--trompo-cyan);
+
     text-shadow: 0 0 10px rgba(100, 234, 255, 0.7);
+
 }
 
 body.trompo-page .nav-links a {
+
     color: #d9dcff;
+
 }
 
 body.trompo-page .nav-links a:hover {
+
     color: var(--trompo-cyan);
+
     text-shadow: 0 0 8px rgba(100, 234, 255, 0.8);
+
 }
 
 body.trompo-page .project-page-hero {
+
     background: linear-gradient(180deg, #050611 0%, #0b0719 100%);
+
 }
 
 body.trompo-page .eyebrow {
+
     color: var(--trompo-cyan);
+
 }
 
 body.trompo-page .project-page-intro h1 {
+
     color: var(--trompo-cyan);
+
     text-shadow: 0 0 8px rgba(100, 234, 255, 0.8), 0 0 20px rgba(100, 234, 255, 0.45);
+
 }
 
 body.trompo-page .project-page-description {
+
     color: var(--trompo-muted);
+
 }
 
 body.trompo-page .tags span {
+
     background: #17112a;
+
     color: var(--trompo-cyan);
+
     border: 1px solid var(--trompo-purple);
+
     box-shadow: 0 0 8px rgba(100, 234, 255, 0.12);
+
 }
 
 body.trompo-page .project-page-cover img {
+
     border: 2px solid var(--trompo-cyan);
+
     box-shadow: 0 0 12px rgba(100, 234, 255, 0.45), 0 0 28px rgba(100, 234, 255, 0.18);
+
 }
 
 body.trompo-page .project-info-section {
+
     background: linear-gradient(135deg, #0c0719, #14092a);
+
 }
 
 body.trompo-page .project-info-section .eyebrow {
+
     color: var(--trompo-pink);
+
 }
 
 body.trompo-page .project-info-title h2 {
+
     color: white;
+
 }
 
 body.trompo-page .project-info-text p {
+
     color: var(--trompo-muted);
+
 }
 
 body.trompo-page .project-gameplay-media img {
+
     border: 2px solid var(--trompo-pink);
+
     box-shadow: 0 0 10px rgba(255, 91, 120, 0.55), 0 0 24px rgba(236, 39, 255, 0.20);
+
 }
 
 body.trompo-page .project-role-section {
+
     background: var(--trompo-bg);
+
 }
 
 body.trompo-page .role-card {
+
     background: linear-gradient(145deg, #0d0b20, #130a27);
+
     border: 1px solid var(--trompo-purple);
+
     box-shadow: 0 0 18px rgba(100, 23, 184, 0.15);
+
 }
 
 body.trompo-page .role-card:hover {
+
     border-color: var(--trompo-cyan);
+
     box-shadow: 0 0 16px rgba(100, 234, 255, 0.25);
+
 }
 
 body.trompo-page .role-number {
+
     color: var(--trompo-pink);
+
 }
 
 body.trompo-page .role-card h3 {
+
     color: var(--trompo-cyan);
+
 }
 
 body.trompo-page .role-card p {
+
     color: var(--trompo-muted);
+
 }
 
 body.trompo-page .project-mechanics-section {
+
     background: linear-gradient(180deg, #110722, #080612);
+
 }
 
 body.trompo-page .project-mechanics-section .eyebrow {
+
     color: var(--trompo-pink);
+
 }
 
 body.trompo-page .project-mechanics-section h2 {
+
     color: white;
+
 }
 
 body.trompo-page .mechanics-list {
+
     border-top: 1px solid var(--trompo-purple);
+
 }
 
 body.trompo-page .mechanic-item {
+
     border-bottom: 1px solid var(--trompo-purple);
+
 }
 
 body.trompo-page .mechanic-item h3 {
+
     color: var(--trompo-cyan);
+
 }
 
 body.trompo-page .mechanic-item p {
+
     color: var(--trompo-muted);
+
 }
 
 body.trompo-page .project-gallery-section {
+
     background: var(--trompo-bg);
+
 }
 
 body.trompo-page .project-gallery-section h2 {
+
     color: white;
+
 }
 
 body.trompo-page .project-gallery img {
+
     border: 2px solid var(--trompo-purple);
+
     box-shadow: 0 0 12px rgba(236, 39, 255, 0.25);
+
 }
 
 body.trompo-page .project-gallery img:hover {
+
     border-color: var(--trompo-cyan);
+
     box-shadow: 0 0 18px rgba(100, 234, 255, 0.35);
+
 }
 
 body.trompo-page .button.secondary {
+
     background: transparent;
+
     color: var(--trompo-cyan);
+
     border: 1px solid var(--trompo-cyan);
+
     box-shadow: 0 0 10px rgba(100, 234, 255, 0.25);
+
 }
 
 body.trompo-page .button.secondary:hover {
+
     background: var(--trompo-cyan);
+
     color: var(--trompo-bg);
+
     box-shadow: 0 0 18px rgba(100, 234, 255, 0.55);
+
 }
 
 body.trompo-page .footer {
+
     margin-top: 0;
+
     background: #03040c;
+
     color: #9fa5bd;
+
     border-top: 1px solid var(--trompo-purple);
+
 }
 
 /* ========================================
+
    TARJETAS RANA
+
 ======================================== */
 
 .rana-card {
+
     background: #db4f9c;
+
     border-color: #6b4393;
+
     color: #2a1b3a;
+
 }
 
 .rana-card .rana-image {
+
     background: linear-gradient(
+
         135deg,
+
         #e95588 0%,
+
         #d982b0 55%,
+
         #b8f58f 100%
+
     );
+
 }
 
 .rana-card .project-type {
+
     color: #6b4393;
+
 }
 
 .rana-card h2,
+
 .rana-card h3 {
+
     color: #2a1b3a;
+
 }
 
 .rana-card .project-content > p:not(.project-type),
+
 .rana-card .project-detail-content p:not(.project-type) {
+
     color: #49305f;
+
 }
 
 .rana-card .project-image span,
+
 .rana-card .project-detail-image span {
+
     color: #2a1b3a;
+
 }
 
 .rana-card .tags span {
+
     background: #b8f58f;
+
     color: #2a1b3a;
+
     border-color: #6b4393;
+
 }
 
 .rana-card .project-link {
+
     color: #83ec3d;
+
 }
 
 .rana-card .project-link:hover {
+
     color: #307700;
+
 }
 
 .rana-card .project-button {
+
     background: #b8f58f;
+
     color: #2a1b3a;
+
     border-color: #6b4393;
+
 }
 
 .rana-card .project-button:hover {
+
     background: #d4ffb6;
+
 }
+
 
 
 /* ========================================
+
    TARJETAS TROMPO
+
 ======================================== */
 
 .trompo-card {
+
     background: #0d0b20;
+
     border-color: #6417b8;
+
     color: #f3f7ff;
+
 }
 
 .trompo-card .trompo-image {
+
     background: linear-gradient(
+
         135deg,
+
         #050611 0%,
+
         #10142c 50%,
+
         #241044 100%
+
     );
+
 }
 
 .trompo-card .project-type {
+
     color: #ff5b78;
+
 }
 
 .trompo-card h2,
+
 .trompo-card h3 {
+
     color: #64eaff;
+
 }
 
 .trompo-card .project-content > p:not(.project-type),
+
 .trompo-card .project-detail-content p:not(.project-type) {
+
     color: #b8b7ce;
+
 }
 
 .trompo-card .project-image span,
+
 .trompo-card .project-detail-image span {
+
     color: #64eaff;
+
 }
 
 .trompo-card .tags span {
+
     background: #17112a;
+
     color: #64eaff;
+
     border-color: #6417b8;
+
 }
 
 .trompo-card .project-link {
+
     color: #64eaff;
+
 }
 
 .trompo-card .project-link:hover {
+
     color: #ff5b78;
+
 }
 
 .trompo-card .project-button {
+
     background: #10142c;
+
     color: #64eaff;
+
     border-color: #64eaff;
+
 }
 
 .trompo-card .project-button:hover {
+
     background: #6417b8;
+
     color: #f3f7ff;
+
 }
